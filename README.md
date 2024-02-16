@@ -77,3 +77,26 @@ $H_A$: The difference in the means is statistically significant.
 
 ### 2. Further Questions
 - **Exploration**: One potential next step is to explore what other factors influence the variation in the number of drives, and run additional hypothesis tests to learn more about user behavior. Furthermore, temporary changes in marketing or user interface for the Waze app may provide more data to investigate churn.
+
+# Notebook 4: Logistic Regression Model Analysis
+
+### 1. Influential Variable in Model's Prediction
+![Feature-importance](images/8.png){:width="100px"}
+- **Insights**: The variable "professional_driver" had the most influence on the model's prediction, indicated by its relatively large absolute coefficient value of -0.31698. This variable was strongly correlated with `driving_days`, known from EDA to have a negative correlation with churn.
+
+### 2. Unexpected Predictor Variables
+![corr](images/9.png)
+- **Observation**: Despite previous EDA suggesting that `km_per_driving_day` would be a strong predictor, it was not as important in the model. The correlation heatmap revealed it to have the strongest positive correlation with churn, yet it ranked among the least important variables in the model.
+
+### 3. Importance of Variables in the Model
+- **Explanation**: In a multiple logistic regression model, variables can interact with each other, leading to counterintuitive relationships. This complexity can make some features appear less important in the model than initially expected, highlighting the intricacies of predictive modeling.
+
+### 4. Recommendation for Model Usage
+- **Recommendation**: Considering the balanced performance and the nature of the Waze application, it's reasonable to consider using this model as a starting point. Further optimization based on business goals and domain expertise feedback could enhance its performance. Continuous monitoring and updates based on new data and user behavior changes are advisable.
+
+### 5. Improving the Model
+- **Suggestions**: Engineering new features, scaling predictor variables, and experimenting with different combinations of predictors could enhance the model's performance by reducing noise from unpredictive features.
+
+### 6. Additional Features for Model Improvement
+- **Enhancements**: Having drive-level information for each user, granular data on user interactions with the app, and monthly counts of unique starting and ending locations for drivers would provide valuable insights for improving the model's predictive capabilities.
+
