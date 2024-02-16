@@ -66,3 +66,14 @@ Each notebook plays a crucial role in understanding the data, conducting analysi
 - **Findings**: Users of all tenures from brand new to approximately 10 years were relatively evenly represented in the data. This is borne out by the histogram for `n_days_after_onboarding`, which reveals a uniform distribution for this variable.
 
 
+# Notebook 3: Hypothesis Testing
+
+$H_0$: The difference in the means is due to chance. So, both means are equal.
+
+$H_A$: The difference in the means is statistically significant.
+
+### 1. Mean Difference in Drives between iPhone and Android Users
+-  **Findings**: The p-value of 0.14 is greater than the significance level of 0.05, so the tests fail to reject the null hypothesis. This means that the difference between the means of drives by Android and iPhone users is due to chance.
+
+### 2. Further Questions
+- **Exploration**: One potential next step is to explore what other factors influence the variation in the number of drives, and run additional hypothesis tests to learn more about user behavior. Furthermore, temporary changes in marketing or user interface for the Waze app may provide more data to investigate churn.
