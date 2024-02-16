@@ -100,3 +100,33 @@ $H_A$: The difference in the means is statistically significant.
 ### 6. Additional Features for Model Improvement
 - **Enhancements**: Having drive-level information for each user, granular data on user interactions with the app, and monthly counts of unique starting and ending locations for drivers would provide valuable insights for improving the model's predictive capabilities.
 
+# Notebook 5: Random Forest and XGboost Models
+
+### 1. Model Recommendation for Churn Prediction
+- **Recommendation**: Considering the consistent recall and overall comparable performance, the XGBoost (XGB) model appears to be a reasonable candidate for churn prediction in Waze. However, it's crucial to weigh the trade-offs between precision and recall, and further fine-tune the model or adjust decision thresholds based on the specific requirements and business impact.
+
+### 2. Model Performance Metrics
+![metrics](images/10.png)
+
+### 3. Champion Model Evaluation
+- **Evaluation**: The XGBoost model's validation recall, precision, and F1 scores are even better than those of the training model, making it the clear champion model.
+
+### 4. XGBoost Model Performance and Feature Importance
+![features-importance](images/12.png)
+- **Insights**: The XGBoost model made more use of many features compared to the logistic regression model, which heavily weighted a single feature (`professional driver`). This highlights the importance of feature engineering, with engineered features accounting for a significant portion of the top features. Furthermore, it's essential to note that important features can vary between models due to complex feature interactions.
+
+### 5. Confusion Matrix Insights
+![matrix](images/11.png)
+- **Confusion Matrix Analysis**: The champion model predicted four times as many false positives as false negatives, indicating a higher rate of false positives. It correctly identified 65% of users who actually churned, but also misclassified some users who churned as not churning.
+
+### 6. Benefits of Logistic Regression Model
+- **Explanation**: Logistic regression models are easier to interpret due to their assignment of coefficients to predictor variables. This reveals not only which features had the most significant impact on predictions but also the directionality of the weight, indicating positive or negative correlation with the target.
+
+### 7. Benefits of Tree-Based Model Ensembles
+- **Advantages**: Tree-based model ensembles, like random forest or XGBoost, often offer superior predictive power compared to logistic regression. They require less data cleaning, make fewer assumptions about underlying distributions, and are generally easier to work with.
+
+### 8. Improving the Model
+- **Suggestions**: Feature engineering to generate better predictive signals and reconstructing the model with different combinations of predictor variables could help reduce noise from unpredictive features. Additionally, enhancing data granularity and incorporating drive-level information could further improve model performance.
+
+### 9. Desired Additional Features
+- **Enhancements**: Having drive-level information, granular data on user interactions with the app, and monthly counts of unique starting and ending locations for each driver would provide valuable insights for enhancing the model's predictive capabilities.
