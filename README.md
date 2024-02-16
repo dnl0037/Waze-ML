@@ -35,3 +35,34 @@ Each notebook plays a crucial role in understanding the data, conducting analysi
 
 ### 6. Churn Rate Comparison Between iPhone and Android Users
 - **Observation**: No appreciable difference in churn rate was observed between iPhone and Android users; the percentages were similar.
+
+# Notebook 2: Exploratory Data Analysis (EDA)
+
+### 1. Distributions of Variables
+![rigth-skew-example](images/2.png)
+- **Findings**: Most variables exhibited either right-skewed or uniform distributions. This indicates that most users had values at the lower end of the range for right-skewed distributions, while for uniform distributions, users were generally equally likely to have values anywhere within the range for that variable.
+
+### 2. Data Quality Assessment
+![driven-km-drives-boxplot](images/3.png)
+- **Insights**: Most of the data was not problematic, and there was no indication that any single variable was completely wrong. However, several variables had highly improbable or perhaps even impossible outlying values, such as `driven_km_drives`. Some of the monthly variables also might be problematic, such as `activity_days` and `driving_days`, because one has a max value of 31 while the other has a max value of 30, indicating that data collection might not have occurred in the same month for both of these variables.
+
+### 3. Further Questions
+- **Discoveries**: The investigation led to additional questions about the consistency of monthly data collection and the sudden changes in user behavior in the last month. It would be important to inquire whether the monthly variables were collected during the same month and if there were any changes that could have prompted this behavior.
+
+### 4. Churn and Retention Rates
+![Count-of-retained-vs-churned](images/4.png)
+- **Analysis**: Less than 18% of users churned, while approximately 82% were retained.
+
+### 5. Factors Correlated with Churn
+<div>
+    <img src="images/5.png" alt="Churn rate by mean km per driving day" style="width: 45%; float: left; margin-right: 5%;">
+    <img src="images/6.png" alt="Churn rate per driving day" style="width: 45%; float: left;">
+</div>
+
+- **Insights**: Distance driven per driving day had a positive correlation with user churn. The farther a user drove on each driving day, the more likely they were to churn. On the other hand, the number of driving days had a negative correlation with churn. Users who drove more days in the last month were less likely to churn.
+
+### 6. Representation of Newer Users
+![Num-days-after-onboarding](images/7.png)
+- **Findings**: Users of all tenures from brand new to approximately 10 years were relatively evenly represented in the data. This is borne out by the histogram for `n_days_after_onboarding`, which reveals a uniform distribution for this variable.
+
+
